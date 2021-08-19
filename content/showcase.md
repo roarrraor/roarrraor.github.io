@@ -2,6 +2,7 @@
 title: "Showcase"
 date: "2019-01-18"
 author: "Lorem Ipsum"
+draft: true
 ---
 
 ## Header 2

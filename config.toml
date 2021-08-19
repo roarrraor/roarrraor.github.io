@@ -6,6 +6,7 @@ paginate = 5
 [params]
   # dir name of your blog content (default is `content/posts`)
   contentTypeName = "post"
+  
   # "light" or "dark"
   defaultTheme = "light"
   # if you set this to 0, only submenu trigger will be visible
@@ -15,7 +16,7 @@ paginate = 5
 
 [languages]
   [languages.en]
-    title = "👾 RoarrraoR"
+    title = "👾 RoarrraoR 👾"
     subtitle = "Writing is resistance"
     keywords = ""
     copyright = "©2020 made  with ❤️ by RoarrraoR"
@@ -28,14 +29,15 @@ paginate = 5
     minuteReadingTime = "min read"
     dateFormatSingle = "02-01-2006"
     dateFormatList = "02-01-2006"
+	lastModDisplay = "Modified:"
 
     [languages.en.params.logo]
       logoText = "RoarrraoR"
       logoHomeLink = "/"
     # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+    
+   path = "/img/logo-navbar.png"
+   alt = "RoarrraoR Website"
 
     [languages.en.menu]
       [[languages.en.menu.main]]
@@ -44,5 +46,6 @@ paginate = 5
         url = "/about"
       [[languages.en.menu.main]]
         identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
+        #name = "Showcase"
+        #url = "/showcase"
+	
