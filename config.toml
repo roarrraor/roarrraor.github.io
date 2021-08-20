@@ -36,7 +36,7 @@ paginate = 5
       logoHomeLink = "/"
     # or
     
-   path = "/img/logo-navbar.png"
+   path = "/img/fav.gif"
    alt = "RoarrraoR Website"
 
     [languages.en.menu]
