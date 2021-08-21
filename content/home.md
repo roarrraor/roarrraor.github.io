@@ -1,7 +1,6 @@
 +++
 author = "roarrraor"
 date = 2020-10-14T00:00:00Z
-draft = true
 title = "Home"
 
 +++
