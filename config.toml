@@ -5,11 +5,11 @@ paginate = 5
 
 [params]
   # dir name of your blog content (default is `content/posts`)
-  contentTypeName = "post"
+  contentTypeName = "home"
   # "light" or "dark"
   defaultTheme = "light"
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 4
+  showMenuItems = 10
   # Enable to show reading time in minutes for posts
   showReadingTime = true
 
@@ -32,23 +32,22 @@ paginate = 5
 
     [languages.en.params.logo]
       logoText = "RoarrraoR"
-      logoHomeLink = "/"
-    # or
-    
-   path = "/img/fav.gif"
-   alt = "RoarrraoR Website"
+      logoHomeLink = "/"    
+      path = "/img/fav.gif"
+      alt = "RoarrraoR Website"
 
 [languages.en.menu]
-      [[languages.en.menu.main]]
+  [[languages.en.menu.main]]
+        identifier = "home"
+        name = "Home"
+        url = "/home"
+
+  [[languages.en.menu.main]]
         identifier = "about"
         name = "About"
         url = "/about"
-      [[languages.en.menu.main]]
+
+  [[languages.en.menu.main]]
         identifier = "showcase"
         #name = "Showcase"
         #url = "/showcase"
-	
-      [[languages.en.menu.main]]
-        identifier = "Home"
-        name = "Home"
-        url = "/home"
