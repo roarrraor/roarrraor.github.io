@@ -40,7 +40,12 @@ paginate = 5
   [[languages.en.menu.main]]
         identifier = "home"
         name = "Home"
-        url = "/home"
+        url = "/"
+
+[[languages.en.menu.main]]
+        identifier = "post"
+        name = "Post"
+        url = "/post"
 
   [[languages.en.menu.main]]
         identifier = "about"
@@ -48,6 +53,6 @@ paginate = 5
         url = "/about"
 
   [[languages.en.menu.main]]
-        identifier = "showcase"
-        #name = "Showcase"
-        #url = "/showcase"
+        identifier = "archive"
+        name = "Archive"
+        url = "/archive"

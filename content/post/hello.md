@@ -1,6 +1,6 @@
 +++
 title = "Hello Friend"
-date = ""
+date = "2020-10-14"
 author = "roarrraor"
 cover = "img/hello.jpg"
 description = "\"Hello, friend?\" That's lame. Maybe I should give you a name?"
