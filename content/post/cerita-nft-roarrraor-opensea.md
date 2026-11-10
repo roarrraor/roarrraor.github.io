@@ -1,6 +1,6 @@
 +++
 title = "Cerita NFT RoarrraoR di OpenSea"
-date = "2026-11-11"
+date = "2026-11-10"
 author = "roarrraor"
 cover = "img/hello.jpg"
 description = "RoarrraoR lahir dari masa yang nggak pasti, tumbuh lewat observasi dan eksperimen, sampai akhirnya tinggal di OpenSea."
