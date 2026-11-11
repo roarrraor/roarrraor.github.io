@@ -100,12 +100,7 @@ h1.post-title {
 /* --- Modern motion: subtle, pixel-friendly, no theme edits ---
    CSS only, so it works with the static Hugo build. */
 
-/* Page + posts fade and rise in on load */
-@keyframes roar-fade-up {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* Page fades in once */
 @keyframes roar-fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -115,16 +110,22 @@ h1.post-title {
   animation: roar-fade-in 0.5s ease-out both;
 }
 
-.post {
-  animation: roar-fade-up 0.55s ease-out both;
+/* Scroll reveal, driven by static/js/roar-motion.js.
+   Hidden only when JS is on (html.js-motion, added in <head>),
+   so no-JS visitors still see everything. Stronger than the
+   old load-only fade: 32px rise, 0.8s, staggered. */
+.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.985);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 
-/* Stagger the list so posts arrive one after another */
-.posts .post:nth-child(1) { animation-delay: 0.05s; }
-.posts .post:nth-child(2) { animation-delay: 0.15s; }
-.posts .post:nth-child(3) { animation-delay: 0.25s; }
-.posts .post:nth-child(4) { animation-delay: 0.35s; }
-.posts .post:nth-child(5) { animation-delay: 0.45s; }
+.js-motion .reveal.in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 /* Title link: underline slides in on hover */
 .post-title a {
@@ -180,9 +181,13 @@ html {
 /* Respect users who prefer no motion */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .content,
-  .post {
+  .content {
     animation: none;
+  }
+  .js-motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
   .post-title a,
   .post-cover img,
