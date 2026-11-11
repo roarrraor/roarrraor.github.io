@@ -96,3 +96,97 @@ h1.post-title {
   margin-top: 16px;
   line-height: 1.6;
 }
+
+/* --- Modern motion: subtle, pixel-friendly, no theme edits ---
+   CSS only, so it works with the static Hugo build. */
+
+/* Page + posts fade and rise in on load */
+@keyframes roar-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes roar-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.content {
+  animation: roar-fade-in 0.5s ease-out both;
+}
+
+.post {
+  animation: roar-fade-up 0.55s ease-out both;
+}
+
+/* Stagger the list so posts arrive one after another */
+.posts .post:nth-child(1) { animation-delay: 0.05s; }
+.posts .post:nth-child(2) { animation-delay: 0.15s; }
+.posts .post:nth-child(3) { animation-delay: 0.25s; }
+.posts .post:nth-child(4) { animation-delay: 0.35s; }
+.posts .post:nth-child(5) { animation-delay: 0.45s; }
+
+/* Title link: underline slides in on hover */
+.post-title a {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+
+.post-title a:hover {
+  background-size: 100% 2px;
+}
+
+/* Cover: gentle zoom + deeper shadow on hover */
+.post-cover {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.post-cover img {
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.post-cover img:hover {
+  transform: scale(1.02);
+}
+
+/* Read more: arrow nudges forward on hover */
+a.read-more {
+  transition: transform 0.25s ease;
+}
+
+a.read-more:hover {
+  transform: translateX(4px);
+}
+
+/* Menu + header: soft hover lift */
+.menu a,
+.header a {
+  transition: opacity 0.2s ease;
+}
+
+.menu a:hover {
+  opacity: 0.65;
+}
+
+/* Smooth scrolling for in-page links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect users who prefer no motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .content,
+  .post {
+    animation: none;
+  }
+  .post-title a,
+  .post-cover img,
+  a.read-more {
+    transition: none;
+  }
+}
